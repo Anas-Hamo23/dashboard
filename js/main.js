@@ -79,7 +79,7 @@
 
 let dropdownToggel = document.querySelectorAll('.dropdownToggel');
 let dropdown = document.querySelectorAll('.dropdown');
-dropdownToggel.forEach((value, index) => { 
+dropdownToggel.forEach((value, index) => {
     value.addEventListener('click', () => {
         if (dropdown.item(index).classList.contains('dropdown_active')) {
             dropdown.item(index).classList.remove('dropdown_active');
