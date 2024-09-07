@@ -7,11 +7,6 @@
     text-decoration: none;
 }
 
-:root {
-    --color: #ff0000;
-    --transition: 500ms ease;
-}
-
 header {
     position: fixed;
     width: 100%;
@@ -23,7 +18,8 @@ header {
     box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 3px;
     background-color: white;
 }
-header h1 span{
+
+header h1 span {
     color: #777;
 }
 
@@ -93,9 +89,13 @@ header nav {
 main {
     display: flex;
 }
-.open_sidebar,.bi-gear,.bi-bell:hover{
+
+.open_sidebar,
+.bi-gear,
+.bi-bell:hover {
     cursor: pointer;
 }
+
 .sidebar {
     padding-top: 88px;
     width: 333px;
@@ -118,22 +118,26 @@ main {
     margin-bottom: 10px;
     font-size: 14px;
 }
-svg{
+
+svg {
     width: 20px;
     height: 20px;
     margin-inline-end: 10px;
 }
-i{
+
+i {
     margin-inline-end: 10px;
     font-size: 20px;
     transition: all 0.3s ease;
 }
-h2{
+
+h2 {
     font-size: 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .dropdownToggel {
     border-radius: 5px 5px 0px 0px;
     padding: 10px 10px 10px 15px;
@@ -145,11 +149,10 @@ h2{
     color: white;
     cursor: pointer;
 }
+
 .dropdown {
     display: none;
     margin-block: 10px;
-    /* transition: all 0.5s ease-in-out; */
-
 }
 
 .dropdown_active {
@@ -172,20 +175,22 @@ h2{
     cursor: pointer;
     padding: 15px;
     padding-inline-start: 15px;
-    /* transition: all 0.3s ease; */
 }
 
 .dropdown div:hover {
     background-color: #142127;
     color: white;
     border-radius: 10px;
+
     a {
         color: white;
     }
 }
-.dropdown div:hover i{
+
+.dropdown div:hover i {
     padding-right: 10px;
 }
+
 /* style content */
 .content {
     background-color: #f1f1f1;
@@ -194,32 +199,31 @@ h2{
     padding: 108px 30px 30px;
     overflow-y: scroll;
 }
-.overview_cards{
+
+.overview_cards {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-block-start: 25px;
 }
-.overview_card{
+
+.overview_card {
     width: 200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #fff;
-    color:#142127;
+    color: #142127;
     border-radius: 7px;
     padding: 10px;
 }
 
-/* .overview_card_title{
-    border-inline-end: 2px #142127 solid;
-    padding-inline-end: 50px;
-} */
-.overview_card_title span{
+.overview_card_title span {
     font-size: 25px;
     font-weight: bold;
 }
-.overview_card_icon svg{
+
+.overview_card_icon svg {
     width: 30px;
     height: 30px;
 }
