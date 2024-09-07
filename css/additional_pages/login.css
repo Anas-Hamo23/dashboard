@@ -1,0 +1,172 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+}
+
+body {
+    background-color: #f1f1f1;
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+section .image img {
+    width: 700px;
+    height: 500px;
+}
+
+section .loginform {
+    background-color: white;
+    width: 400px;
+    height: 500px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 0px 30px;
+}
+
+.loginform h1 {
+    padding-block: 20px;
+    color: blue;
+}
+
+.loginform .role {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block-end: 30px;
+}
+.loginform .role i{
+    font-size: 25px;
+    color: blue;
+}
+
+.loginform .role .manager,
+.loginform .role .emploeey {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px rgba(0, 0, 0, 0.3) solid;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: left;
+    width: 200px;
+}
+
+.loginform .role .manager,
+.loginform .role .emploeey:hover {
+    cursor: pointer;
+}
+
+.loginform .role .emploeey {
+    margin-inline-start: 10px;
+}
+
+.loginform .role .manager i,
+.loginform .role .emploeey i {
+    margin-inline-end: 10px;
+}
+
+.loginform .role .manager span,
+.loginform .role .emploeey span {
+    font-weight: bold;
+}
+
+.loginform form .username .name,
+.loginform form .password .pass {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px rgba(0, 0, 0, 0.3) solid;
+    margin-block-end: 30px;
+    border-radius: 5px;
+    padding-inline: 10px;
+}
+
+.loginform form .username input,
+.loginform form .password input {
+    width: 240px;
+    height: 35px;
+    border: none;
+}
+
+.loginform form .username input:focus .name,
+.loginform form .password input:focus .pass {
+    border-color: blue;
+}
+
+
+.active {
+    background-color: rgba(0, 0, 255, 0.05);
+    border: 1px blue solid !important;
+}
+
+.active_color {
+    color: blue;
+}
+
+.forgot_remember {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block-end: 30px;
+}
+
+.forgot_remember a {
+    color: black;
+}
+
+.forgot_remember_input {
+    display: flex;
+    align-items: center;
+}
+
+.forgot_remember_input input {
+    margin-inline-end: 5px;
+}
+
+.submit input {
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    margin-block-end: 15px;
+    cursor: pointer;
+}
+
+.submit .register {
+    background-color: white;
+    color: blue;
+    border: 1px rgba(0, 0, 255, 0.3) solid;
+    font-size: 16px;
+    font-weight: bold;
+    margin-block-end: 15px;
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    padding: 8px 75px;
+    transition: 500ms ease;
+}
+
+.submit .register:hover {
+    color: white;
+    background-color: blue;
+    border: none;
+}
+
+form h3 {
+    margin-block-end: 15px;
+    color: rgba(0, 0, 0, 0.5);
+}
