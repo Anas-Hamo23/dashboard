@@ -116,4 +116,17 @@ dropdownToggel.forEach((value, index) => {
     });
 });
 
+let open_sidebar=document.querySelector('.open_sidebar');
+// let close_sidebar=document.querySelector(".close_sidebar");
+let sidebar=document.querySelector('.sidebar');
+if(window.innerWidth<=768){
+    sidebar.style.display='none';
+}
+open_sidebar.addEventListener('click',()=>{
+    if(sidebar.style.display==='none'){
+        sidebar.style.display='block';
+    }else{
+        sidebar.style.display='none';
+    }
+});
 
