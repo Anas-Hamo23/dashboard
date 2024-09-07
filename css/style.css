@@ -238,7 +238,7 @@ h2 {
     left:50%;
     top: 50%;
     height: 7px;
-    width: 150px;
+    width: 178px;
     --c:no-repeat linear-gradient(#000000b4 0 0);
     background: var(--c),var(--c),#ffffff;
     background-size: 60% 100%;
