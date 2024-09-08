@@ -17,11 +17,11 @@
         height: 30px;
     }
 
-    .overview_cards {
+    /* .overview_cards {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         gap: 40px;
-    }
+    } */
 
     .overview_card_icon svg {
         width: 25px;
