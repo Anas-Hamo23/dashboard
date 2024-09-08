@@ -18,7 +18,6 @@
 //     }
 // });
 
-
 // let dropdownToggel=document.querySelectorAll('.dropdownToggel');
 // let dropdown=document.querySelectorAll('.dropdown');
 // dropdownToggel.forEach((value,index)=>{
@@ -33,7 +32,6 @@
 //         }
 //     });
 // });
-
 
 // let dropdownToggel = document.querySelectorAll('.dropdownToggel');
 // let dropdown = document.querySelectorAll('.dropdown');
@@ -64,7 +62,7 @@
 //         if (dropdown.item(index).classList.contains('dropdown_active')) {
 //             dropdown.item(index).classList.remove('dropdown_active');
 //             value.classList.remove('dropdown_active_color');
-            
+
 //         } else {
 //             // إزالة الفئة النشطة من جميع العناصر
 //             dropdown.forEach((item) => item.classList.remove('dropdown_active'));
@@ -75,65 +73,89 @@
 //         }
 //     });
 // });
-
-const loader = document.querySelector('.loading');
-document.addEventListener('DOMContentLoaded', () => {
-  loader.style.display = 'block';
-  setTimeout(() => {
-    loader.style.display = 'none';
-  }, 3000);
+const loader = document.querySelector(".loading");
+document.addEventListener("DOMContentLoaded", () => {
+    loader.style.display = "block";
+    setTimeout(() => {
+        loader.style.display = "none";
+    }, 3000);
 });
 
-let dropdownToggel = document.querySelectorAll('.dropdownToggel');
-let dropdown = document.querySelectorAll('.dropdown');
+let dropdownToggel = document.querySelectorAll(".dropdownToggel");
+let dropdown = document.querySelectorAll(".dropdown");
+let dropdown_item=document.querySelectorAll('.dropdown_item');
 dropdownToggel.forEach((value, index) => {
-    value.addEventListener('click', () => {
-        if (dropdown.item(index).classList.contains('dropdown_active')) {
-            dropdown.item(index).classList.remove('dropdown_active');
-            value.classList.remove('dropdown_active_color');
-            let currentSvg = value.querySelector('.svg_down');
+    value.addEventListener("click", () => {
+        if (dropdown.item(index).classList.contains("dropdown_active")) {
+            dropdown.item(index).classList.remove("dropdown_active");
+            value.classList.remove("dropdown_active_color");
+            let currentSvg = value.querySelector(".svg_down");
             if (currentSvg) {
                 currentSvg.remove();
             }
-            let newSvg = document.createElement('i');
-            newSvg.setAttribute('class', 'bi bi-chevron-down svg_down');
+            let newSvg = document.createElement("i");
+            newSvg.setAttribute("class", "bi bi-chevron-down svg_down");
             value.appendChild(newSvg);
         } else {
-            dropdown.forEach((item) => item.classList.remove('dropdown_active'));
+            dropdown.forEach((item) => item.classList.remove("dropdown_active"));
             dropdownToggel.forEach((item) => {
-                item.classList.remove('dropdown_active_color');
-                let currentSvg = item.querySelector('.svg_down');
+                item.classList.remove("dropdown_active_color");
+                let currentSvg = item.querySelector(".svg_down");
                 if (currentSvg) {
                     currentSvg.remove();
                 }
-                let newSvg = document.createElement('i');
-                newSvg.setAttribute('class', 'bi bi-chevron-down svg_down');
+                let newSvg = document.createElement("i");
+                newSvg.setAttribute("class", "bi bi-chevron-down svg_down");
                 item.appendChild(newSvg);
             });
-            dropdown.item(index).classList.add('dropdown_active');
-            value.classList.add('dropdown_active_color');
-            let currentSvg = value.querySelector('.svg_down');
+            dropdown.item(index).classList.add("dropdown_active");
+            value.classList.add("dropdown_active_color");
+            let currentSvg = value.querySelector(".svg_down");
             if (currentSvg) {
                 currentSvg.remove();
             }
-            let newSvg = document.createElement('i');
-            newSvg.setAttribute('class', 'bi bi-chevron-up svg_down');
+            let newSvg = document.createElement("i");
+            newSvg.setAttribute("class", "bi bi-chevron-up svg_down");
             value.appendChild(newSvg);
         }
     });
 });
 
-let open_sidebar=document.querySelector('.open_sidebar');
-let sidebar=document.querySelector('.sidebar');
-if(window.innerWidth<=768){
-    sidebar.style.display='none';
-}
-open_sidebar.addEventListener('click',()=>{
-    if(sidebar.style.display==='none'){
-        sidebar.style.display='block';
-    }else{
-        sidebar.style.display='none';
+let open_sidebar = document.querySelector(".open_sidebar");
+let sidebar = document.querySelector(".sidebar");
+open_sidebar.addEventListener("click", () => {
+    if (sidebar.style.display === "none") {
+        sidebar.style.display = "block";
+    } else {
+        sidebar.style.display = "none";
     }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll(".load-content");
 
+    links.forEach((link) => {
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const loader = document.querySelector(".loading");
+            loader.style.display = "block";
+            setTimeout(() => {
+                loader.style.display = "none";
+            }, 2000);
+            const page = this.getAttribute("data-page");
+
+            fetch(page)
+                .then((response) => response.text())
+                .then((data) => {
+                    document.getElementById("content").innerHTML = data;
+                })
+                .catch((error) => {
+                    console.error("حدث خطأ أثناء تحميل الصفحة:", error);
+                    document.getElementById("content").innerHTML =
+                        "<p>حدث خطأ أثناء تحميل المحتوى.</p>";
+                });
+
+        });
+        
+    });
+});

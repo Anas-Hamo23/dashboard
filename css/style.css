@@ -286,7 +286,7 @@ h2 {
     .button_card {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-        gap: 40px;
+        gap: 30px;
 
     }
 
@@ -492,6 +492,7 @@ h2 {
         color: white;
         background-color: black;
     }
+
     .lable_button button {
         cursor: pointer;
         padding: 10px;
@@ -501,37 +502,74 @@ h2 {
         margin-bottom: 10px;
         color: white;
     }
-    .lable_button .linkedin{
 
+    .lable_button .linkedin {
+        background-color: #0a66c2;
+    }
+
+    .lable_button .skype {
+        background-color: #00aff0;
+    }
+
+    .lable_button .youtube {
+        background-color: #ff0000;
 
     }
-   .lable_button .skype{
-    
 
-   }
-    .lable_button .youtube{
-        
-
+    .lable_button .snapchat {
+        background-color: #fffc00;
     }
-    .lable_button .messenger{
-        
 
+    .lable_button .whatsapp {
+        background-color: #25d366;
     }
-    .lable_button .whatsapp{
-        
 
+    .lable_button .facebook {
+        background-color: #1877f2;
     }
-    .lable_button .facebook{
-        
 
-    }
     .icon_button button {
         cursor: pointer;
-        padding: 10px;
+        padding: 7px;
         border: none;
         border-radius: 5px;
         margin-inline-end: 20px;
         margin-bottom: 10px;
+        color: white;
+    }
+    .icon_button i{
+        padding-inline-start: 7px;
+    }
+    .icon_button .linkedin {
+        background-color: #0a66c2;
+    }
+
+    .icon_button .skype {
+        background-color: #00aff0;
+    }
+
+    .icon_button .youtube {
+        background-color: #ff0000;
+
+    }
+
+    .icon_button .snapchat {
+        background-color: #fffc00;
+    }
+
+    .icon_button .whatsapp {
+        background-color: #25d366;
+    }
+
+    .icon_button .facebook {
+        background-color: #1877f2;
+    }
+    .footer{
+        width: 100%;
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px 0px 20px 20px;
+        text-align: center;
     }
 
 }

@@ -1,382 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="../../css/style.css" />
-    <link rel="stylesheet" href="../../css/styleResponce.css">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
-        integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-
-<body>
-    <!-- start header -->
-    <header>
-        <h1 class="logo">Dash<span>Board</span></h1>
-        <nav>
-            <i class="bi bi-list open_sidebar" style="font-size: 30px;"></i>
-            <!-- <i class="bi bi-x-lg close_sidebar" style="font-size: 30px;"></i> -->
-            <div class="search">
-                <label for="search">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-search" viewBox="0 0 16 16">
-                        <path
-                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-                    </svg>
-                </label>
-                <input id="search" type="search" placeholder="Search Here..." />
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    class="bi bi-arrow-down" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                        d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1" />
-                </svg>
-            </div>
-            <div class="setting_profile">
-                <div class="setting">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-gear" viewBox="0 0 16 16">
-                        <path
-                            d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0" />
-                        <path
-                            d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z" />
-                    </svg>
-                </div>
-                <div class="nav">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-bell" viewBox="0 0 16 16">
-                        <path
-                            d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6" />
-                    </svg>
-                </div>
-                <div class="profile">
-                    <div class="img_profile">
-                        <img src="../../Screenshot 2023-11-10 205216.png" alt="profile" />
-                    </div>
-                    <!-- <ul id="">
-                        <li value=""><a href="">profile</a></li>
-                        <li value=""><a href="">setting</a></li>
-                        <li value=""><a href="">help</a></li>
-                        <li value=""><a href="">log out</a></li>
-                    </ul> -->
-                </div>
-            </div>
-        </nav>
-    </header>
-    <!-- end header -->
-    <!-- start main -->
-    <!-- <div class="loading">
-        <div class="loader"></div>
-    </div> -->
-    <main>
-        <!-- start sidebar  -->
-        <section class="sidebar" id="sidebar">
-            <div class="home">
-                <h2 class="dropdown_active_color dropdownToggel">
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-house" viewBox="0 0 16 16">
-                            <path
-                                d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z" />
-                        </svg>
-                        Home
-                    </div>
-                    <i class="bi bi-chevron-down svg_down"></i>
-                </h2>
-                <div class="dropdown">
-                    <div><i class="bi bi-dash-lg"></i><a href=""> Home 1</a></div>
-                    <div><i class="bi bi-dash-lg"></i><a href=""> Home 1</a></div>
-                    <div><i class="bi bi-dash-lg"></i><a href=""> Home 1</a></div>
-                </div>
-            </div>
-            <div class="forms">
-                <h2 class="dropdownToggel">
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-textarea-resize" viewBox="0 0 16 16">
-                            <path
-                                d="M0 4.5A2.5 2.5 0 0 1 2.5 2h11A2.5 2.5 0 0 1 16 4.5v7a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 0 11.5zM2.5 3A1.5 1.5 0 0 0 1 4.5v7A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 13.5 3zm10.854 4.646a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708l3-3a.5.5 0 0 1 .708 0m0 2.5a.5.5 0 0 1 0 .708l-.5.5a.5.5 0 0 1-.708-.708l.5-.5a.5.5 0 0 1 .708 0" />
-                        </svg>
-                        Forms
-                    </div>
-                    <i class="bi bi-chevron-down svg_down"></i>
-                </h2>
-                <div class="dropdown">
-                    <div><i class="bi bi-dash-lg"></i><a href=""> Form 1</a></div>
-                    <div><i class="bi bi-dash-lg"></i><a href=""> Form 1</a></div>
-                    <div><i class="bi bi-dash-lg"></i><a href=""> Form 1</a></div>
-                </div>
-            </div>
-            <div class="tables">
-                <h2 class="dropdownToggel">
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-table" viewBox="0 0 16 16">
-                            <path
-                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm15 2h-4v3h4zm0 4h-4v3h4zm0 4h-4v3h3a1 1 0 0 0 1-1zm-5 3v-3H6v3zm-5 0v-3H1v2a1 1 0 0 0 1 1zm-4-4h4V8H1zm0-4h4V4H1zm5-3v3h4V4zm4 4H6v3h4z" />
-                        </svg>
-                        Tables
-                    </div>
-                    <i class="bi bi-chevron-down svg_down"></i>
-                </h2>
-                <div class="dropdown">
-                    <div><i class="bi bi-dash-lg"></i><a href=""> Table 1</a></div>
-                    <div><i class="bi bi-dash-lg"></i><a href=""> Table 1</a></div>
-                    <div><i class="bi bi-dash-lg"></i><a href=""> Table 1</a></div>
-                </div>
-            </div>
-            <div class="error_pages">
-                <h2 class="dropdownToggel">
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-bug" viewBox="0 0 16 16">
-                            <path
-                                d="M4.355.522a.5.5 0 0 1 .623.333l.291.956A5 5 0 0 1 8 1c1.007 0 1.946.298 2.731.811l.29-.956a.5.5 0 1 1 .957.29l-.41 1.352A5 5 0 0 1 13 6h.5a.5.5 0 0 0 .5-.5V5a.5.5 0 0 1 1 0v.5A1.5 1.5 0 0 1 13.5 7H13v1h1.5a.5.5 0 0 1 0 1H13v1h.5a1.5 1.5 0 0 1 1.5 1.5v.5a.5.5 0 1 1-1 0v-.5a.5.5 0 0 0-.5-.5H13a5 5 0 0 1-10 0h-.5a.5.5 0 0 0-.5.5v.5a.5.5 0 1 1-1 0v-.5A1.5 1.5 0 0 1 2.5 10H3V9H1.5a.5.5 0 0 1 0-1H3V7h-.5A1.5 1.5 0 0 1 1 5.5V5a.5.5 0 0 1 1 0v.5a.5.5 0 0 0 .5.5H3c0-1.364.547-2.601 1.432-3.503l-.41-1.352a.5.5 0 0 1 .333-.623M4 7v4a4 4 0 0 0 3.5 3.97V7zm4.5 0v7.97A4 4 0 0 0 12 11V7zM12 6a4 4 0 0 0-1.334-2.982A3.98 3.98 0 0 0 8 2a3.98 3.98 0 0 0-2.667 1.018A4 4 0 0 0 4 6z" />
-                        </svg>
-                        Error Pages
-                    </div>
-                    <i class="bi bi-chevron-down svg_down"></i>
-                </h2>
-                <div class="dropdown">
-                    <div>
-                        <i class="bi bi-dash-lg"></i><a href="pages/error/error400.html"> Error 400</a>
-                    </div>
-                    <div>
-                        <i class="bi bi-dash-lg"></i><a href="pages/error/error403.html"> Error 403</a>
-                    </div>
-                    <div>
-                        <i class="bi bi-dash-lg"></i><a href="pages/error/error404.html"> Error 404</a>
-                    </div>
-                    <div>
-                        <i class="bi bi-dash-lg"></i><a href="pages/error/error500.html"> Error 500</a>
-                    </div>
-                    <div>
-                        <i class="bi bi-dash-lg"></i><a href="pages/error/error503.html"> Error 503</a>
-                    </div>
-                </div>
-            </div>
-            <div class="ui_element">
-                <h2 class="dropdownToggel">
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-archive" viewBox="0 0 16 16">
-                            <path
-                                d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 12.5V5a1 1 0 0 1-1-1zm2 3v7.5A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5V5zm13-3H1v2h14zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5" />
-                        </svg>
-                        UI Element
-                    </div>
-                    <i class="bi bi-chevron-down svg_down"></i>
-                </h2>
-                <div class="dropdown">
-                    <div>
-                        <i class="bi bi-dash-lg"></i><a href="pages/ui_element/button.html"> Buttons</a>
-                    </div>
-                    <div>
-                        <i class="bi bi-dash-lg"></i><a href="pages/error/error403.html"> Cards</a>
-                    </div>
-                    <div>
-                        <i class="bi bi-dash-lg"></i><a href="pages/error/error404.html"> UI Tabs</a>
-                    </div>
-                    <div>
-                        <i class="bi bi-dash-lg"></i><a href="pages/error/error500.html"> Error 500</a>
-                    </div>
-                    <div>
-                        <i class="bi bi-dash-lg"></i><a href="pages/error/error503.html"> Error 503</a>
-                    </div>
-                </div>
-            </div>
-            <div class="additional_pages">
-                <h2 class="dropdownToggel">
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-file-earmark-text" viewBox="0 0 16 16">
-                            <path
-                                d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5" />
-                            <path
-                                d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z" />
-                        </svg>
-                        Additional Pages
-                    </div>
-                    <i class="bi bi-chevron-down svg_down"></i>
-                </h2>
-                <div class="dropdown">
-                    <div>
-                        <i class="bi bi-dash-lg"></i><a href="pages/additional_pages/login.html"> Login</a>
-                    </div>
-                    <div>
-                        <i class="bi bi-dash-lg"></i><a href="pages/additional_pages/forgot_password.html">
-                            Forgot Password</a>
-                    </div>
-                    <div>
-                        <i class="bi bi-dash-lg"></i><a href="pages/additional_pages/reset_password.html">
-                            Reset Password</a>
-                    </div>
-                    <div>
-                        <i class="bi bi-dash-lg"></i><a href="pages/additional_pages/video_player.html">
-                            Video Player</a>
-                    </div>
-                </div>
-            </div>
-            <div class="extra_pages">
-                <h2 class="dropdownToggel">
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-back" viewBox="0 0 16 16">
-                            <path
-                                d="M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z" />
-                        </svg>
-                        Extra Pages
-                    </div>
-                    <i class="bi bi-chevron-down svg_down"></i>
-                </h2>
-                <div class="dropdown">
-                    <div>
-                        <i class="bi bi-dash-lg"></i><a href="pages/additional_pages/login.html"> Login</a>
-                    </div>
-                    <div>
-                        <i class="bi bi-dash-lg"></i><a href="pages/additional_pages/forgot_password.html">
-                            Forgot Password</a>
-                    </div>
-                    <div>
-                        <i class="bi bi-dash-lg"></i><a href="pages/additional_pages/reset_password.html">
-                            Reset Password</a>
-                    </div>
-                    <div>
-                        <i class="bi bi-dash-lg"></i><a href="pages/additional_pages/video_player.html">
-                            Video Player</a>
-                    </div>
-                </div>
-            </div>
-            <div class="chat">
-                <h2 class="dropdownToggel">
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-chat-right-text" viewBox="0 0 16 16">
-                            <path
-                                d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" />
-                            <path
-                                d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6m0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5" />
-                        </svg>
-                        Chat
-                    </div>
-                    <i class="bi bi-chevron-down svg_down"></i>
-                </h2>
-                <div class="dropdown">
-                    <div>
-                        <i class="bi bi-dash-lg"></i><a href="pages/additional_pages/login.html"> Login</a>
-                    </div>
-                    <div>
-                        <i class="bi bi-dash-lg"></i><a href="pages/additional_pages/forgot_password.html">
-                            Forgot Password</a>
-                    </div>
-                    <div>
-                        <i class="bi bi-dash-lg"></i><a href="pages/additional_pages/reset_password.html">
-                            Reset Password</a>
-                    </div>
-                    <div>
-                        <i class="bi bi-dash-lg"></i><a href="pages/additional_pages/video_player.html">
-                            Video Player</a>
-                    </div>
-                </div>
-            </div>
-            <div class="invoice">
-                <h2 class="dropdownToggel">
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-receipt-cutoff" viewBox="0 0 16 16">
-                            <path
-                                d="M3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5M11.5 4a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1z" />
-                            <path
-                                d="M2.354.646a.5.5 0 0 0-.801.13l-.5 1A.5.5 0 0 0 1 2v13H.5a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1H15V2a.5.5 0 0 0-.053-.224l-.5-1a.5.5 0 0 0-.8-.13L13 1.293l-.646-.647a.5.5 0 0 0-.708 0L11 1.293l-.646-.647a.5.5 0 0 0-.708 0L9 1.293 8.354.646a.5.5 0 0 0-.708 0L7 1.293 6.354.646a.5.5 0 0 0-.708 0L5 1.293 4.354.646a.5.5 0 0 0-.708 0L3 1.293zm-.217 1.198.51.51a.5.5 0 0 0 .707 0L4 1.707l.646.647a.5.5 0 0 0 .708 0L6 1.707l.646.647a.5.5 0 0 0 .708 0L8 1.707l.646.647a.5.5 0 0 0 .708 0L10 1.707l.646.647a.5.5 0 0 0 .708 0L12 1.707l.646.647a.5.5 0 0 0 .708 0l.509-.51.137.274V15H2V2.118z" />
-                        </svg>
-                        Invoice
-                    </div>
-                    <i class="bi bi-chevron-down svg_down"></i>
-                </h2>
-                <div class="dropdown">
-                    <div>
-                        <i class="bi bi-dash-lg"></i><a href="pages/additional_pages/login.html"> Login</a>
-                    </div>
-                    <div>
-                        <i class="bi bi-dash-lg"></i><a href="pages/additional_pages/forgot_password.html">
-                            Forgot Password</a>
-                    </div>
-                    <div>
-                        <i class="bi bi-dash-lg"></i><a href="pages/additional_pages/reset_password.html">
-                            Reset Password</a>
-                    </div>
-                    <div>
-                        <i class="bi bi-dash-lg"></i><a href="pages/additional_pages/video_player.html">
-                            Video Player</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- end sidebar -->
-
-        <!-- start content main -->
-        <section class="content" id="content">
-            <div class="buttons">
-                <div class="header">
-                    <h1>Buttons</h1>
-                    <p>Home <i class="bi bi-chevron-right"></i><span>Buttons</span></p>
-                </div>
-                <div class="button_card">
-                    <div class="examples">
-                        <h1>Examples</h1>
-                        <button class="primary">Primary</button>
-                        <button class="secondary">Secondary</button>
-                        <button class="success">Success</button>
-                        <button class="danger">Danger</button>
-                        <button class="warning">Warning</button>
-                        <button class="info">Info</button>
-                        <button class="light">Light</button>
-                        <button class="dark">Dark</button>
-                        <button class="link">Link</button>
-                    </div>
-                    <div class="outline">
-                        <h1>Outline button</h1>
-                        <button class="primary">Primary</button>
-                        <button class="secondary">Secondary</button>
-                        <button class="success">Success</button>
-                        <button class="danger">Danger</button>
-                        <button class="warning">Warning</button>
-                        <button class="info">Info</button>
-                        <button class="light">Light</button>
-                        <button class="dark">Dark</button>
-                    </div>
-                    <div class="lable_button">
-                        <h1>Icon With Lable Buttons</h1>
-                        <button class="facebook"><i class="bi bi-facebook"></i>Facebook</button>
-                        <button class="whatsapp"><i class="bi bi-whatsapp"></i>Whatsapp</button>
-                        <button class="messenger"><i class="bi bi-messenger"></i>Messenger</button>
-                        <button class="linkedin"><i class="bi bi-linkedin"></i>Linkedin</button>
-                        <button class="skype"><i class="bi bi-skype"></i>Skype</button>
-                        <button class="youtube"><i class="bi bi-youtube"></i>Youtube</button>
-                    </div>
-                    <div class="icon_button">
-                        <h1>Icon Buttons</h1>
-                        <button class="facebook"><i class="bi bi-facebook"></i></button>
-                        <button class="whatsapp"><i class="bi bi-whatsapp"></i></button>
-                        <button class="messenger"><i class="bi bi-messenger"></i></button>
-                        <button class="linkedin"><i class="bi bi-linkedin"></i></button>
-                        <button class="skype"><i class="bi bi-skype"></i></button>
-                        <button class="youtube"><i class="bi bi-youtube"></i></button>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-        <!-- end content main -->
-    </main>
-    <!-- end main -->
-    <!-- start footer -->
-    <footer></footer>
-    <!-- end footer -->
-    <script src="../../js/main.js"></script>
-</body>
-
-</html>
+<div class="buttons">
+    <div class="header">
+        <h1>Buttons</h1>
+        <p>Home <i class="bi bi-chevron-right"></i><span>Buttons</span></p>
+    </div>
+    <div class="button_card">
+        <div class="examples">
+            <h1>Examples</h1>
+            <button class="primary">Primary</button>
+            <button class="secondary">Secondary</button>
+            <button class="success">Success</button>
+            <button class="danger">Danger</button>
+            <button class="warning">Warning</button>
+            <button class="info">Info</button>
+            <button class="light">Light</button>
+            <button class="dark">Dark</button>
+            <button class="link">Link</button>
+        </div>
+        <div class="outline">
+            <h1>Outline button</h1>
+            <button class="primary">Primary</button>
+            <button class="secondary">Secondary</button>
+            <button class="success">Success</button>
+            <button class="danger">Danger</button>
+            <button class="warning">Warning</button>
+            <button class="info">Info</button>
+            <button class="light">Light</button>
+            <button class="dark">Dark</button>
+        </div>
+        <div class="lable_button">
+            <h1>Icon With Lable Buttons</h1>
+            <button class="facebook"><i class="bi bi-facebook"></i>Facebook</button>
+            <button class="whatsapp"><i class="bi bi-whatsapp"></i>Whatsapp</button>
+            <button class="snapchat"><i class="bi bi-snapchat"></i>Snapchat</button>
+            <button class="linkedin"><i class="bi bi-linkedin"></i>Linkedin</button>
+            <button class="skype"><i class="bi bi-skype"></i>Skype</button>
+            <button class="youtube"><i class="bi bi-youtube"></i>Youtube</button>
+        </div>
+        <div class="icon_button">
+            <h1>Icon Buttons</h1>
+            <button class="facebook"><i class="bi bi-facebook"></i></button>
+            <button class="whatsapp"><i class="bi bi-whatsapp"></i></button>
+            <button class="snapchat"><i class="bi bi-snapchat"></i></button>
+            <button class="linkedin"><i class="bi bi-linkedin"></i></button>
+            <button class="skype"><i class="bi bi-skype"></i></button>
+            <button class="youtube"><i class="bi bi-youtube"></i></button>
+        </div>
+    </div>
+    <div class="footer">
+        Anas Hamo
+    </div>
+</div>
